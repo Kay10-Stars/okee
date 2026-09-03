@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7255ee">
+  <title>Kayzz Store — Premium Digital</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap');
+
+    :root{--bg:#f7f7fc;--surface:#fff;--soft:#f0edff;--ink:#202033;--muted:#77758c;--line:#e9e7f2;--brand:#7154ed;--brand2:#9b7cff;--accent:#ff6d95;--success:#18a765;--price-old:#aaa6b8;--shadow:0 12px 36px rgba(66,48,132,.10)}
+    html[data-theme="dark"]{--bg:#14131d;--surface:#201e2c;--soft:#2b273e;--ink:#f7f5ff;--muted:#bbb6ca;--line:#393548;--brand:#a890ff;--brand2:#7662d4;--accent:#ff8baa;--price-old:#777286;--shadow:0 16px 38px rgba(0,0,0,.28)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",Arial,sans-serif;transition:background .3s,color .3s} button,input{font:inherit} button{border:0;cursor:pointer} a{text-decoration:none;color:inherit}
+    .container{width:min(720px,92%);margin:auto}.topline{background:linear-gradient(100deg,#5f45db,#9a70ff);color:white;text-align:center;padding:9px 12px;font-size:12px;font-weight:700;letter-spacing:.2px}
+    header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:10px}.brand{display:flex;align-items:center;gap:10px}.brand-mark{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--accent));color:white;font-family:Unbounded,sans-serif;font-size:13px;box-shadow:0 8px 18px rgba(113,84,237,.28)}.brand-name{font:700 17px Unbounded,sans-serif;letter-spacing:-1px}.nav-right{display:flex;gap:8px;align-items:center}.theme{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,var(--surface),var(--soft));color:var(--ink);border:1px solid var(--line);display:grid;place-items:center;font-size:19px;box-shadow:0 6px 16px rgba(70,50,140,.12);transition:.25s ease;position:relative;overflow:hidden}.theme::before{content:"✦";position:absolute;font-size:8px;top:5px;right:6px;opacity:.7;color:var(--brand)}.theme:hover{transform:translateY(-2px) rotate(5deg);box-shadow:0 9px 20px rgba(70,50,140,.18)}.theme:active{transform:scale(.92)}.wa-mini{font-size:12px;font-weight:800;background:var(--success);color:white;border-radius:12px;padding:11px 13px}
+    main{padding-bottom:94px}.hero{padding:27px 0 21px}.hero-card{overflow:hidden;position:relative;border-radius:27px;padding:29px 23px;color:white;background:linear-gradient(130deg,#6145da,#8f6df8 57%,#ed83bc);box-shadow:0 18px 35px rgba(103,76,221,.25)}.hero-card:before,.hero-card:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.13)}.hero-card:before{width:210px;height:210px;right:-80px;top:-84px}.hero-card:after{width:110px;height:110px;right:70px;bottom:-65px}.eyebrow{position:relative;z-index:1;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.8px;background:rgba(255,255,255,.16);padding:8px 10px;border-radius:99px}.hero h1{position:relative;z-index:1;font:600 clamp(25px,6vw,38px)/1.18 Unbounded,sans-serif;letter-spacing:-1.8px;margin:15px 0 11px}.hero p{position:relative;z-index:1;max-width:480px;margin:0;line-height:1.65;font-size:14px;color:rgba(255,255,255,.9)}.hero-note{position:relative;z-index:1;display:inline-flex;margin-top:19px;padding:9px 12px;border-radius:11px;background:white;color:#6045d5;font-size:12px;font-weight:800}
+    .section-title{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:22px 0 12px}.section-title h2{font:700 17px Unbounded,sans-serif;letter-spacing:-.8px;margin:0}.section-title h2::after{content:" ✦";color:var(--brand);font-size:10px}.section-title p{margin:4px 0 0;color:var(--muted);font-size:12px}.hot-scroll{display:flex;gap:11px;overflow-x:auto;padding:4px 1px 11px;scroll-snap-type:x mandatory;scrollbar-width:none}.hot-scroll::-webkit-scrollbar{display:none}.hot-card{scroll-snap-align:start;flex:0 0 142px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:11px;box-shadow:var(--shadow);transition:.2s}.hot-card:hover{transform:translateY(-3px)}.hot-icon{height:82px;border-radius:13px;display:grid;place-items:center;font-weight:800;font-size:21px;color:white}.hot-card b{display:block;color:var(--ink);margin:9px 1px 2px;font-size:13px}.hot-card small{color:var(--brand);font-weight:800;font-size:11px}.drag-note{color:var(--muted);font-size:11px;margin-top:-5px}
+    .search-wrap{position:relative;margin-top:21px}.search{width:100%;border:1px solid var(--line);border-radius:16px;padding:15px 44px 15px 16px;background:var(--surface);color:var(--ink);outline:0;box-shadow:var(--shadow);transition:.2s}.search:focus{border-color:var(--brand);box-shadow:0 0 0 4px color-mix(in srgb,var(--brand) 14%,transparent)}.search-icon{position:absolute;right:15px;top:13px;font-size:18px}.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 0 3px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chip{white-space:nowrap;background:var(--soft);color:var(--muted);border:1px solid transparent;border-radius:99px;padding:8px 11px;font-size:12px;font-weight:700}.chip.active,.chip:hover{background:var(--brand);color:white}
+    .catalog-head{display:flex;justify-content:space-between;align-items:center;margin:14px 0 12px}.catalog-head h2{margin:0;font:700 17px Unbounded,sans-serif;letter-spacing:-.8px}.catalog-head h2::after{content:" ✨";color:var(--accent);font-size:10px}.result{font-size:11px;color:var(--muted);font-weight:700}.product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.product{min-width:0;text-align:left;padding:10px;background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);position:relative;overflow:hidden;animation:rise .42s both;transition:transform .2s,box-shadow .2s,border-color .2s}.product:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--brand) 45%,var(--line));box-shadow:0 16px 32px rgba(73,53,142,.16)}.product:active{transform:scale(.97)}.product-image{height:133px;border-radius:14px;display:grid;place-items:center;color:white;font-weight:800;font-size:26px;letter-spacing:-1px;position:relative;overflow:hidden}.product-image:after{content:"✦";position:absolute;right:9px;top:6px;font-size:15px;opacity:.72}.product-info{padding:10px 3px 3px}.product-name{color:var(--ink);font-size:14px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.product-desc{color:var(--muted);font-size:11px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.product-foot{display:flex;align-items:center;justify-content:space-between;margin-top:9px}.product-price{font-size:12px;font-weight:800;color:var(--brand)}.go{width:27px;height:27px;border-radius:9px;display:grid;place-items:center;background:var(--soft);color:var(--brand);font-size:16px}.empty{grid-column:1/-1;padding:30px 12px;text-align:center;background:var(--surface);border:1px dashed var(--line);border-radius:18px;color:var(--muted);font-size:13px}.contact-box{margin-top:23px;border-radius:20px;padding:18px;background:linear-gradient(135deg,color-mix(in srgb,var(--brand) 13%,var(--surface)),var(--surface));border:1px solid color-mix(in srgb,var(--brand) 20%,var(--line));display:flex;gap:13px;align-items:flex-start}.contact-icon{flex:0 0 auto;width:39px;height:39px;border-radius:13px;display:grid;place-items:center;background:var(--success);color:white}.contact-box b{display:block;font-size:14px}.contact-box p{margin:4px 0 9px;font-size:12px;color:var(--muted);line-height:1.5}.contact-link{color:var(--success);font-weight:800;font-size:13px}
+    .bottom-wa{position:fixed;z-index:24;bottom:14px;left:50%;transform:translateX(-50%);width:min(720px,92%);display:flex;justify-content:center;gap:8px;align-items:center;padding:14px;background:#16a561;color:white;border-radius:17px;font-weight:800;font-size:14px;box-shadow:0 13px 25px rgba(19,145,82,.28)}
+    .product-page{position:fixed;z-index:60;inset:0;overflow:auto;background:var(--bg);display:none}.product-page.open{display:block;animation:pageIn .32s both}.detail-wrap{width:min(720px,92%);margin:auto;padding:18px 0 110px}.detail-nav{display:flex;align-items:center;gap:12px;margin-bottom:22px}.back{width:41px;height:41px;border-radius:13px;background:var(--surface);color:var(--ink);border:1px solid var(--line);font-size:21px}.detail-nav span{color:var(--muted);font-size:12px;font-weight:700}.detail-hero{border-radius:26px;padding:20px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);display:flex;gap:16px;align-items:center}.detail-icon{width:85px;height:85px;border-radius:20px;display:grid;place-items:center;color:#fff;font-size:25px;font-weight:800;flex:0 0 auto}.detail-hero h2{font:700 20px Unbounded,sans-serif;letter-spacing:-1.1px;margin:0}.detail-hero p{margin:6px 0 0;font-size:12px;line-height:1.55;color:var(--muted)}.choose-title{margin:24px 0 10px;font:700 17px Unbounded,sans-serif;letter-spacing:-.7px}.choose-sub{color:var(--muted);font-size:12px;margin:-3px 0 13px}.variants{display:grid;gap:10px}.variant{padding:15px;background:var(--surface);border:1px solid var(--line);border-radius:16px;text-align:left;display:flex;gap:10px;align-items:center;justify-content:space-between;transition:.2s}.variant:hover{border-color:var(--brand);transform:translateX(3px)}.variant.selected{border-color:var(--brand);background:color-mix(in srgb,var(--brand) 10%,var(--surface));box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 13%,transparent)}.variant-name{display:block;font-weight:800;font-size:14px;color:var(--ink)}.variant-note{display:block;font-size:11px;color:var(--muted);margin-top:7px;line-height:1.45}.variant-price{font-weight:800;color:var(--brand);font-size:14px;white-space:nowrap}.order-panel{margin-top:15px;padding:16px;border-radius:18px;background:var(--soft);border:1px solid color-mix(in srgb,var(--brand) 18%,var(--line));display:none}.order-panel.show{display:block;animation:rise .25s both}.order-panel p{font-size:12px;color:var(--muted);margin:4px 0 13px;line-height:1.5}.order-button{width:100%;border-radius:13px;padding:14px;background:var(--success);color:white;font-weight:800;font-size:14px}.toast{position:fixed;z-index:100;left:50%;bottom:84px;transform:translate(-50%,15px);opacity:0;background:var(--ink);color:var(--surface);padding:11px 14px;border-radius:12px;font-size:12px;font-weight:700;transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+    .g-am{background:linear-gradient(135deg,#f73871,#8d1bdf)}.g-ig{background:linear-gradient(135deg,#f8bd42,#ec3156 47%,#6338bd)}.g-tt{background:linear-gradient(135deg,#101018,#22e4d4)}.g-netflix{background:linear-gradient(135deg,#331016,#e50914)}.g-bstation{background:linear-gradient(135deg,#25c7f3,#5178f4)}.g-wink{background:linear-gradient(135deg,#ff8a40,#ff4f8b)}.g-capcut{background:linear-gradient(135deg,#202127,#636977)}.g-chatgpt{background:linear-gradient(135deg,#0b766a,#10ae90)}.g-canva{background:linear-gradient(135deg,#00c4cf,#7959e8)}
+
+    .price-box{display:flex;flex-direction:column;gap:2px}
+    .price-old{color:var(--price-old);text-decoration:line-through;font-size:10px;font-weight:700}
+    .price-promo{color:var(--brand);font-size:12px;font-weight:900}
+    .discount-badge{display:inline-flex;align-items:center;width:max-content;margin-top:4px;padding:3px 6px;border-radius:6px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-size:9px;font-weight:900}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes pageIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
+    .product-page.closing{animation:pageOut .28s both}
+    @keyframes pageOut{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(16px)}}
+    @media(min-width:600px){.product-grid{gap:15px}.product-image{height:165px}.product{padding:12px}.hero-card{padding:36px 31px}.detail-wrap{padding-top:26px}}@media(max-width:360px){.wa-mini{display:none}.product-image{height:114px}.brand-name{font-size:14px}}
+  </style>
+</head>
+<body>
+  <div class="topline">✨ Dana pelajar, pilihan premium — harga tetap bersahabat.</div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <span class="brand-mark">KZ</span>
+        <span class="brand-name">kayzz store</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme" id="themeToggle">🌙</button>
+        <a class="wa-mini" href="https://wa.me/6285185439465" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <div class="container">
+      <section class="hero">
+        <div class="hero-card">
+          <span class="eyebrow">✦ PREMIUM DIGITAL PILIHAN</span>
+          <h1>Favoritmu, versi premium.</h1>
+          <p>Nikmati layanan digital pilihan dengan proses yang simpel, harga yang ramah, dan admin yang siap membantu lewat WhatsApp.</p>
+          <span class="hero-note">💜 Pesan nyaman, proses bersahabat</span>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <div>
+            <h2>🔥 Lagi hot</h2>
+            <p>Geser deretan ini ke kiri untuk lihat promo lainnya.</p>
+          </div>
+          <span style="font-size:18px">←</span>
+        </div>
+        <div class="hot-scroll" id="hotScroll"></div>
+        <div class="drag-note">Geser kartu promo ke samping ⟷</div>
+      </section>
+
+      <section>
+        <div class="search-wrap">
+          <input class="search" id="searchInput" type="search" placeholder="Cari APK: AM, film, desain, video...">
+          <span class="search-icon">⌕</span>
+        </div>
+
+        <div class="chips" id="chips">
+          <button class="chip active" data-query="">Semua</button>
+          <button class="chip" data-query="film">🎬 Film</button>
+          <button class="chip" data-query="edit">🎨 Edit</button>
+          <button class="chip" data-query="sosmed">📱 Sosmed</button>
+          <button class="chip" data-query="ai">🤖 AI</button>
+          <button class="chip" data-query="desain">🖌️ Desain</button>
+        </div>
+
+        <div class="catalog-head">
+          <h2>Pilih aplikasimu</h2>
+          <span class="result" id="resultCount"></span>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <aside class="contact-box">
+        <div class="contact-icon">💬</div>
+        <div>
+          <b>Untuk sementara, pemesanan hanya via WhatsApp.</b>
+          <p>Tenang, pilih varian dulu lalu tombol pesan akan menyiapkan chat kamu secara otomatis. Admin siap bantu dengan ramah.</p>
+          <a class="contact-link" href="https://wa.me/6285185439465" target="_blank">Chat admin: +62 851-8543-9465 →</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <a class="bottom-wa" href="https://wa.me/6285185439465" target="_blank">💬 Butuh bantuan? Chat WhatsApp</a>
+
+  <section class="product-page" id="productPage">
+    <div class="detail-wrap">
+      <div class="detail-nav">
+        <button class="back" id="backButton">←</button>
+        <span>Kembali ke daftar aplikasi</span>
+      </div>
+
+      <div class="detail-hero">
+        <div class="detail-icon" id="detailIcon"></div>
+        <div>
+          <h2 id="detailName">Produk</h2>
+          <p id="detailDescription"></p>
+        </div>
+      </div>
+
+      <h3 class="choose-title">Pilih varian terbaikmu ✨</h3>
+      <p class="choose-sub">Tekan salah satu pilihan di bawah. Setelah itu, tombol pesan WhatsApp akan muncul.</p>
+
+      <div class="variants" id="variants"></div>
+
+      <div class="order-panel" id="orderPanel">
+        <b>🎉 Pilihanmu sudah siap!</b>
+        <p id="orderSummary"></p>
+        <button class="order-button" id="orderButton">💬 Pesan varian ini via WhatsApp</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const WA_NUMBER = "6285185439465";
+
+    const products = [
+      {id:"alight",name:"Alight Motion",short:"AM",className:"g-am",description:"Bikin edit video lebih leluasa dengan fitur premium.",keywords:"am alight motion alight edit editor video motion desain",price:"Mulai 10K",options:[{name:"1 Tahun",price:"10K"}],hot:true},
+      {id:"instagram",name:"Instagram",short:"IG",className:"g-ig",description:"Pilihan layanan Instagram sesuai kebutuhanmu.",keywords:"ig instagram insta sosmed social media reels",price:"Tanya admin",options:[{name:"Tanya varian & harga",price:"Chat admin",note:"Harga mengikuti req sebelumnya"}],hot:true},
+      {id:"tiktok",name:"TikTok",short:"TT",className:"g-tt",description:"Layanan TikTok premium dengan proses sederhana.",keywords:"tt tiktok tik tok sosmed social media fyp",price:"Tanya admin",options:[{name:"Tanya varian & harga",price:"Chat admin",note:"Harga mengikuti req sebelumnya"}],hot:true},
+      {id:"netflix",name:"Netflix",short:"N",className:"g-netflix",description:"Teman santai untuk pecinta film dan serial favorit.",keywords:"netflix film movie drama series nonton streaming",price:"Mulai 20K",options:[{name:"1 Profil · 2 User",price:"20K"},{name:"1 Profil · 1 User",price:"40K"},{name:"1 Bulan Private",price:"150K"},{name:"1 Bulan Sharing",price:"30K"}],hot:true},
+      {id:"bstation",name:"Bstation",short:"B",className:"g-bstation",description:"Nikmati tontonan pilihan dengan varian yang fleksibel.",keywords:"bstation b station bilibili film anime nonton streaming",price:"Mulai 10K",options:[{name:"1 Bulan Private",price:"30K"},{name:"1 Bulan Sharing",price:"10K"}]},
+      {id:"wink",name:"Wink",short:"W",className:"g-wink",description:"Pilihan premium untuk kebutuhan kreasi kamu.",keywords:"wink win edit video photo foto kreator",price:"Mulai 8K",options:[{name:"1 Minggu",price:"8K"},{name:"1 Bulan",price:"23K"}],hot:true},
+      {id:"capcut",name:"CapCut",short:"CC",className:"g-capcut",description:"Edit video makin seru, rapi, dan bebas eksplorasi.",keywords:"capcut cc cap cut edit editor video template",price:"Mulai 8K",options:[{name:"1 Minggu Private",price:"16K"},{name:"1 Minggu Sharing",price:"8K"},{name:"1 Bulan Private",price:"35K"},{name:"1 Bulan Sharing",price:"25K"}],hot:true},
+      {id:"chatgpt",name:"ChatGPT",short:"AI",className:"g-chatgpt",description:"Partner AI untuk ide, tugas, dan eksplorasi kreatif.",keywords:"chatgpt chat gpt ai openai tugas belajar bot",price:"Mulai 35K",options:[{name:"2 Minggu Sharing",price:"35K"},{name:"1 Bulan Sharing",price:"60K"}]},
+      {id:"canva",name:"Canva",short:"C",className:"g-canva",description:"Desain konten cantik jadi lebih praktis dan cepat.",keywords:"canva desain design poster template edit grafik",price:"Mulai 8K",options:[{name:"1 Bulan",price:"8K"},{name:"1 Tahun",price:"12K"}],hot:true}
+    ];
+
+    let currentProduct = null;
+    let selectedOption = null;
+    let activeQuery = "";
+
+    const productGrid = document.getElementById("productGrid");
+    const hotScroll = document.getElementById("hotScroll");
+    const searchInput = document.getElementById("searchInput");
+    const resultCount = document.getElementById("resultCount");
+    const productPage = document.getElementById("productPage");
+    const variants = document.getElementById("variants");
+    const orderPanel = document.getElementById("orderPanel");
+
+    function matches(product, query) {
+      return !query || `${product.name} ${product.short} ${product.keywords}`.toLowerCase().includes(query.toLowerCase());
+    }
+
+    function getPromoPrice(price) {
+      const match = String(price).match(/(\d+)\s*K/i);
+      if (!match) return null;
+
+      const current = Number(match[1]);
+      if (!current) return null;
+
+      return current * 2;
+    }
+
+    function renderProducts() {
+      const query = (searchInput.value + " " + activeQuery).trim();
+      const visible = products.filter(p => matches(p, query));
+
+      resultCount.textContent = `${visible.length} aplikasi tersedia`;
+
+      productGrid.innerHTML = visible.length
+        ? visible.map((p, index) => {
+            const promo = p.hot ? getPromoPrice(p.price) : null;
+
+            return `
+              <button class="product" style="animation-delay:${index * 45}ms" data-id="${p.id}">
+                <div class="product-image ${p.className}">${p.short}</div>
+                <div class="product-info">
+                  <div class="product-name">${p.name}</div>
+                  <div class="product-desc">Tekan untuk pilih varian</div>
+                  <div class="product-foot">
+                    ${
+                      promo
+                      ? `
+                        <span class="price-box">
+                          <span class="price-old">${promo}K</span>
+                          <span class="price-promo">${p.price}</span>
+                        </span>
+                      `
+                      : `
+                        <span class="product-price">${p.price}</span>
+                      `
+                    }
+                    <span class="go">→</span>
+                  </div>
+                  ${promo ? `<span class="discount-badge">🔥 DISKON 50%</span>` : ""}
+                </div>
+              </button>
+            `;
+          }).join("")
+        : `<div class="empty">🔎 Belum ketemu. Coba kata seperti <b>film</b>, <b>AM</b>, <b>edit</b>, atau nama APK-nya.</div>`;
+    }
+
+    function renderHot() {
+      hotScroll.innerHTML = products.filter(p => p.hot).map(p => {
+        const promo = getPromoPrice(p.price);
+
+        return `
+          <button class="hot-card" data-id="${p.id}">
+            <div class="hot-icon ${p.className}">${p.short}</div>
+            <b>${p.name}</b>
+            ${
+              promo
+              ? `
+                <span class="price-box">
+                  <span class="price-old">${promo}K</span>
+                  <span class="price-promo">${p.price}</span>
+                </span>
+                <span class="discount-badge">🔥 50% OFF</span>
+              `
+              : `<small>${p.price}</small>`
+            }
+          </button>
+        `;
+      }).join("");
+    }
+
+    function openProduct(id, pushHistory = true) {
+      currentProduct = products.find(p => p.id === id);
+      if (pushHistory) {
+        history.pushState({ productPage: true, productId: id }, "", `#product-${id}`);
+      }
+      if (!currentProduct) return;
+
+      selectedOption = null;
+
+      document.getElementById("detailIcon").className = `detail-icon ${currentProduct.className}`;
+      document.getElementById("detailIcon").textContent = currentProduct.short;
+      document.getElementById("detailName").textContent = currentProduct.name;
+      document.getElementById("detailDescription").textContent = currentProduct.description;
+
+      variants.innerHTML = currentProduct.options.map((option, index) => `
+        <button class="variant" data-index="${index}">
+          <span>
+            <span class="variant-name">${option.name}</span>
+            <span class="variant-note">${option.note || "Pilih untuk lanjut pesan"}</span>
+          </span>
+          <span class="variant-price">${option.price}</span>
+        </button>
+      `).join("");
+
+      orderPanel.classList.remove("show");
+      productPage.classList.add("open");
+      document.body.style.overflow = "hidden";
+      productPage.scrollTop = 0;
+    }
+
+    function closeProduct() {
+      productPage.classList.add("closing");
+      document.body.style.overflow = "";
+      productPage.addEventListener("animationend", () => {
+        productPage.classList.remove("open", "closing");
+      }, { once: true });
+    }
+
+    function closeProductWithHistory() {
+      if (productPage.classList.contains("open")) history.back();
+    }
+
+    window.addEventListener("popstate", () => {
+      if (productPage.classList.contains("open")) closeProduct();
+    });
+
+    function chooseOption(index) {
+      selectedOption = currentProduct.options[index];
+
+      [...variants.children].forEach((button, i) => {
+        button.classList.toggle("selected", i === index);
+      });
+
+      document.getElementById("orderSummary").innerHTML =
+        `Kamu memilih <b>${currentProduct.name}</b> — <b>${selectedOption.name}</b> (${selectedOption.price}). Siap lanjut ke WhatsApp?`;
+
+      orderPanel.classList.add("show");
+      orderPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    function sendOrder() {
+      if (!currentProduct || !selectedOption) return;
+
+      const message = `Halo Kayzz Store 👋%0A%0ASaya ingin memesan:%0A• APK: ${currentProduct.name}%0A• Varian: ${selectedOption.name}%0A• Harga: ${selectedOption.price}%0A%0ATolong dibantu proses ya. Terima kasih!`;
+
+      window.open(`https://wa.me/${WA_NUMBER}?text=${message}`, "_blank");
+    }
+
+    function toast(text) {
+      const el = document.getElementById("toast");
+      el.textContent = text;
+      el.classList.add("show");
+      setTimeout(() => el.classList.remove("show"), 1700);
+    }
+
+    productGrid.addEventListener("click", e => {
+      const card = e.target.closest("[data-id]");
+      if (card) openProduct(card.dataset.id);
+    });
+
+    hotScroll.addEventListener("click", e => {
+      const card = e.target.closest("[data-id]");
+      if (card) openProduct(card.dataset.id);
+    });
+
+    variants.addEventListener("click", e => {
+      const button = e.target.closest(".variant");
+      if (button) chooseOption(Number(button.dataset.index));
+    });
+
+    document.getElementById("backButton").addEventListener("click", closeProductWithHistory);
+    document.getElementById("orderButton").addEventListener("click", sendOrder);
+
+    searchInput.addEventListener("input", () => {
+      activeQuery = "";
+      document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+      document.querySelector('.chip[data-query=""]').classList.add("active");
+      renderProducts();
+    });
+
+    document.getElementById("chips").addEventListener("click", e => {
+      const chip = e.target.closest(".chip");
+      if (!chip) return;
+
+      activeQuery = chip.dataset.query;
+      searchInput.value = "";
+
+      document.querySelectorAll(".chip").forEach(c => {
+        c.classList.toggle("active", c === chip);
+      });
+
+      renderProducts();
+    });
+
+    const themeToggle = document.getElementById("themeToggle");
+
+    function setTheme(theme) {
+      const dark = theme === "dark";
+
+      document.documentElement.dataset.theme = theme;
+      themeToggle.innerHTML = dark ? "☀️" : "🌙";
+      themeToggle.setAttribute(
+        "aria-label",
+        dark ? "Ganti ke tema terang" : "Ganti ke tema gelap"
+      );
+
+      localStorage.setItem("kayzz-theme", theme);
+    }
+
+    setTheme(localStorage.getItem("kayzz-theme") || "light");
+
+    themeToggle.addEventListener("click", () => {
+      setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+      toast(document.documentElement.dataset.theme === "dark" ? "Tema gelap aktif 🌙" : "Tema terang aktif ☀️");
+    });
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape" && productPage.classList.contains("open")) closeProduct();
+    });
+
+    renderHot();
+    renderProducts();
+  </script>
+</body>
+</html>
